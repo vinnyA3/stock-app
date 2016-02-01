@@ -5,6 +5,7 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	config = require('./config/config'),
 	morgan = require('morgan'),
+	sass = require('node-sass-middleware'),
 	server = require('http').Server(app),
 	io = require('socket.io')(server),
 	port = process.env.PORT || 8080;
@@ -26,6 +27,16 @@ app.use(function(req,res,next){
 	res.setHeader('Access-Control-Allow-Headers','X-Requested-With, content-type, \Authorization');
 	next();
 });
+//sass middleware
+app.use(
+	sass({
+		src: __dirname + '/public/sass',
+		dest: __dirname + '/public/assets/css',
+		prefix: '/css',
+		debug:true,
+		outputStyle: 'compressed'
+	})
+);
 
 //set location for static files
 app.use(express.static(__dirname + '/public'));
