@@ -6,5 +6,6 @@ angular.module('stockApp',[
 	'loginCtrl',
 	'signupCtrl',
 	'portfolioCtrl',
+	'navbarCtrl',
 	'appRoutes'
 ]);
