@@ -1,4 +1,15 @@
-$bg-color: #e5e3e3;
+/* ==================  IMPORTS  ==================== */
+/* VARIABLES */
+@import 'variables';
+/* MIXINS */
+@import 'mixins';
+
+@import 'home';
+@import 'portfolio';
+/* PARTIAL STYLES */
+@import 'partials-sass/navbar-transparent.scss';
+	
+	
 body{
 	background: $bg-color;
 }
@@ -20,4 +31,9 @@ a{
 }
 .mg-top{
 	margin-top: 20px;
+}
+
+/* =================  MAIN  STYLES  ================== */
+.navbar{
+	border-radius: 0px;
 }
