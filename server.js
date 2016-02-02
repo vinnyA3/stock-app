@@ -32,18 +32,18 @@ app.use(
 	sass({
 		src: __dirname + '/public/sass',
 		dest: __dirname + '/public/assets/css',
-		prefix: '/css',
+		force: true,
 		debug:true,
 		outputStyle: 'compressed'
 	})
 );
 
 //set location for static files
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname , '/public')));
 
 //get all route
 app.get('*', function(req,res){
-	res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
+	res.sendFile(path.join(__dirname , '/public/app/views/index.html'));
 });
 
 server.listen(port, function(){
