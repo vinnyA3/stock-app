@@ -1,5 +1,5 @@
 var User = require('../models/User'),
-	Stock = require('../models/Stocks'),
+	Stock = require('../models/Stock'),
 	config = require('../../config/config'),
 	jwt = require('jwt-simple'),
 	moment = require('moment');
@@ -63,10 +63,12 @@ module.exports = function(app,express){
 	});
 	// =======================  AUTHENTICATED ROUTES  =================================
 	router.get('/portfolio', ensureAuthenticated, function(req,res){
-		User.find({'_id':req.user}, function(err,user){
+		User.findOne({'_id':req.user})
+			.populate('stocks')
+			.exec(function(err,user){
 				if(err){return res.send(err);}
-			    return res.send({success:true, user:user});
-			  });
+				return res.send(user);
+			});
 	})
 	.post('/portfolio', ensureAuthenticated, function(req,res){
 		//create the stock body
@@ -75,11 +77,15 @@ module.exports = function(app,express){
 		newStock.symbol = req.body.symbol;
 		newStock.created_by = req.user; //user id
 		//save the stock	
-		newStock.save(function(err){
+		newStock.save(function(err,stock){
 			if(err){
 				return res.send(err);
 			}
-			return res.send({success:true,message:'stock added!'});
+			//update the User stocks array
+			User.update({'_id':req.user}, {$push: {stocks: stock.id}}, function(err,user){
+				if(err){return res.send(err);}
+				return res.send({success:true,message:'stock added!',user});
+			});
 		});
 				
 	});
