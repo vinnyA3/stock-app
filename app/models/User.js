@@ -1,15 +1,17 @@
 var mongoose = require('mongoose'),
-	bcrypt = require('bcrypt-nodejs');
+	bcrypt = require('bcrypt-nodejs'),
+	StocksSchema = require('./Stocks');
 
 var UserSchema = mongoose.Schema({
 	name:String,
 	email: {type: String, index:{unique:true}},
-    password: {type: String, select:false}
+    password: {type: String, select:false},
+	stocks:[StocksSchema]
 });
 
 
 UserSchema.methods.hashPassword = function(password){
-	return bcrypt.hashSync(pass,bcrypt.genSaltSync(8,null));
+	return bcrypt.hashSync(password,bcrypt.genSaltSync(8,null));
 };
 
 UserSchema.methods.comparePassword = function(password){
