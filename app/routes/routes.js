@@ -106,7 +106,7 @@ module.exports = function(app,express){
 			//update the User stocks array
 			User.update({'_id':req.user}, {$push: {stocks: stock.id}}, function(err,user){
 				if(err){return res.send(err);}
-				return res.send({success:true,message:'stock added!',user});
+				return res.send({success:true,message:'stock added!',user:user});
 			});
 		});
 				
