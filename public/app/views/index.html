@@ -2,16 +2,32 @@
 <html>
 	<head>
 		<title>Stock App</title>
+		<base href="/">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="main.css" rel="stylesheet" type="text/css">
 	</head>
-	<body>
-		<div class="col-md-6 col-md-offset-3 text-center">
-			<div class="main-block">
-				<h1><strong>SARA JEAN UNDERWOOD</strong></h1>
-				<img class="main-block-image" src="http://teamhellions.files.wordpress.com/2010/10/sara.jpg">
+	<body ng-app="stockApp">
+	
+	
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-brand"><a ui-sref="home">Hello</a></div>
+				<ul class="nav navbar-nav pull-right">
+					<li><a ui-sref="signup">Sign Up</a></li>
+					<li><a ui-sref="login">Login</a></li>
+				</ul>
 			</div>
-		</div>
+		</nav>	
 		
+		<div ui-view></div>
+		
+	<!-- Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.17/angular-ui-router.min.js"></script>
+	<!-- Controller -->
+	<!-- Services -->
+	<!-- Main Angular Files -->
+	<script src="app/app.js"></script>
+	<script src="app/app-routes.js"></script>
 	</body>
 </html>
