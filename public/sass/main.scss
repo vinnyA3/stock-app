@@ -1,4 +1,9 @@
-$bg-color: blue;
+$bg-color: #e5e3e3;
 body{
 	background: $bg-color;
+}
+.main-block-image{
+	width: 70%;
+	height: auto;
+	box-shadow: 0px 0px 7px 3px #000;
 }
