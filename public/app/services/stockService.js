@@ -9,7 +9,7 @@ angular.module('stockService', [])
 		function getUserStocks(){
 			var deffered = $q.defer();
 			//make http request
-			$http.get('/portfolio')
+			$http.get('/auth/portfolio',{cache:true})
 				.success(function(data){
 					if(data){
 						deffered.resolve(data);
@@ -25,7 +25,7 @@ angular.module('stockService', [])
 		function addNewStock(stockname,stocksymbol){
 			var deffered = $q.defer();
 			//make post req
-			$http.post('/portfolio',{stockname: stockname, symbol: stocksymbol})
+			$http.post('/auth/portfolio',{stockname: stockname, symbol: stocksymbol})
 				.success(function(data){
 					deffered.resolve(data);
 				})
@@ -39,7 +39,7 @@ angular.module('stockService', [])
 		function getAllStocks(){
 			var deffered = $q.defer();
 			//make the get req
-			$http.get('/allstocks')
+			$http.get('/auth/allstocks')
 				.success(function(data){
 					deffered.resolve(data);
 				})
