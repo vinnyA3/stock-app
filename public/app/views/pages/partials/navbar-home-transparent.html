@@ -1,0 +1,13 @@
+<!-- navbar-fixed-transparent in the main component -->
+<nav class="navbar navbar-fixed-transparent">
+	<div class="container-fluid">
+		<div class="navbar-brand navbar-fixed-transparent-brand"><a ui-sref="home">Hello</a></div>
+			<ul class="nav navbar-nav navbar-fixed-transparent-navbar pull-right">
+				<li class="navbar-fixed-transparent-navbar-item" ng-if="!nav.isAuthenticated()"><a class="navbar-fixed-transparent-navbar-item-link" ui-sref="login">Login</a></li>
+				<li class="navbar-fixed-transparent-navbar-item mod-button" ng-if="!nav.isAuthenticated()"><a class="navbar-fixed-transparent-navbar-item-link" ui-sref="signup">Sign Up</a></li>
+				<li class="navbar-fixed-transparent-navbar-item" ng-if="nav.isAuthenticated()"><a class="navbar-fixed-transparent-navbar-item-link" ui-sref="hotstocks">Hot Stocks</a></li>
+				<li class="navbar-fixed-transparent-navbar-item" ng-if="nav.isAuthenticated()"><a class="navbar-fixed-transparent-navbar-item-link" ui-sref="portfolio">Portfolio</a></li>
+				<li class="navbar-fixed-transparent-navbar-item" ng-if="nav.isAuthenticated()"><a class="navbar-fixed-transparent-navbar-item-link" href="#" ng-click="nav.logOut()">Log Out</a></li>
+			</ul>
+	</div>
+</nav>	

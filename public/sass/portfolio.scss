@@ -1,0 +1,46 @@
+/* STOCK GRAPH */
+.stock-graph{
+	border:1px solid black;
+	width: 100%;
+	height: 400px;
+}
+
+/* USER STOCK LIST */
+.user-stock-list{
+	min-height: 500px;
+	padding:3px;
+}
+	.user-stock-list-title{
+		text-align: center;
+		font-weight:bold;
+		text-transform: uppercase;
+	}
+	.user-stock-list-item{
+		background-color: #ededed;
+		position: relative;
+		margin-bottom: 10px;
+		width: 100%;
+		padding:5px 2px 5px 5px;
+		@include vendor-box-sizing(border-box);
+		&:hover{
+			border-bottom:3px solid green;
+		}
+	}
+		.user-stock-list-item-delete{
+			position: absolute;
+			color: #222222;
+			top:5px;
+			right:5px;
+			&:hover{
+				color: #f24b4b;
+				cursor: pointer;
+			}
+		}
+		.user-stock-list-item-name{
+			font-weight:bold;
+			text-transform: uppercase;
+		}
+		.user-stock-list-item-symbol{
+			font-weight:bold;
+			text-transform: uppercase;
+		}
