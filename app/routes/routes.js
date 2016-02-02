@@ -61,8 +61,30 @@ module.exports = function(app,express){
 			return res.send({success:true, token: createToken(user), user:user});
 		});
 	});
+	
+	router.post('/login', function(req,res){
+		//first check if the user is in the database
+		User.findOne({'email':req.body.email})
+			.select('email password')
+			.exec(function(err,user){
+				if(err){throw err;}
+				if(!user){
+					return res.send({success:false, message:'That user does not exist!'});
+				}else if(user){
+					//check if the password is valid
+					var validPass = user.comparePassword(req.body.password);
+					if(!validPass){
+						return res.send({success:false, message:'Incorrect password!'});
+					}else{
+						return res.send({success:true, token:createToken(user)});
+					}
+				}
+			});
+	});
+	
 	// =======================  AUTHENTICATED ROUTES  =================================
 	router.get('/portfolio', ensureAuthenticated, function(req,res){
+		//find user and populate the user's stocks array with stocks
 		User.findOne({'_id':req.user})
 			.populate('stocks')
 			.exec(function(err,user){
@@ -88,6 +110,19 @@ module.exports = function(app,express){
 			});
 		});
 				
+	});
+	
+	//All Users's stocks
+	router.get('/allstocks', ensureAuthenticated, function(req,res){
+		Stock.find({})
+			 .populate({
+				path:'created_by',
+				select:'name'
+			 })
+			 .exec(function(err,stocks){
+				if(err){return res.send(err);}
+				return res.send(stocks);
+			 });
 	});
 	
 	//return the express router
