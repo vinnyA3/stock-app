@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(function(req,res,next){
 	res.setHeader('Access-Control-Allow-Origin','*');
 	res.setHeader('Access-Control-Allow-Methods','GET,POST');
-	res.setHeader('Access-Control-Allow-Headers','X-Requested-With, content-type, \Authorization');
+	res.setHeader('Access-Control-Allow-Headers','X-Requested-With, content-type, \ Authorization');
 	next();
 });
 //sass middleware
@@ -40,6 +40,10 @@ app.use(
 
 //set location for static files
 app.use(express.static(path.join(__dirname , '/public')));
+
+//our auth routes
+var apiRoutes = require('./app/routes/routes.js')(app,express);
+app.use('/auth',apiRoutes);
 
 //get all route
 app.get('*', function(req,res){
