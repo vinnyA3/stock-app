@@ -1,12 +1,11 @@
 var mongoose = require('mongoose'),
-	bcrypt = require('bcrypt-nodejs'),
-	StocksSchema = require('./Stocks');
+	bcrypt = require('bcrypt-nodejs');
 
 var UserSchema = mongoose.Schema({
 	name:String,
 	email: {type: String, index:{unique:true}},
     password: {type: String, select:false},
-	stocks:[StocksSchema]
+	stocks:[{type: mongoose.SchemaTypes.ObjectId, ref:'Stock'}]
 });
 
 
