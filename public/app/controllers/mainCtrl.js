@@ -1,6 +1,6 @@
 angular.module('mainCtrl', ['satellizer'])
 	.controller('mainController', function($auth,$location){
-		var vm = this;
+		/*var vm = this;
 	
 		 //isAuthenticated function
         vm.isAuthenticated = function(){
@@ -13,6 +13,6 @@ angular.module('mainCtrl', ['satellizer'])
                 .then(function(){
                     $location.path('/');
                 });
-        };
+        };*/
 	
 	});
