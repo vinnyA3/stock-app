@@ -6,27 +6,34 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="main.css" rel="stylesheet" type="text/css">
 	</head>
-	<body ng-app="stockApp">
+	<body ng-app="stockApp" ng-controller="mainController as main">
 	
 	
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-brand"><a ui-sref="home">Hello</a></div>
 				<ul class="nav navbar-nav pull-right">
-					<li><a ui-sref="signup">Sign Up</a></li>
-					<li><a ui-sref="login">Login</a></li>
+					<li ng-if="!main.isAuthenticated()"><a ui-sref="signup">Sign Up</a></li>
+					<li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
+					 <li ng-if="main.isAuthenticated()"><a ui-sref="allstocks">Hot Stocks</a></li>
+					 <li ng-if="main.isAuthenticated()"><a ui-sref="portfolio">Portfolio</a></li>
+					<li ng-if="main.isAuthenticated()"><a href="#" ng-click="main.logOut()">Log Out</a></li>
 				</ul>
 			</div>
 		</nav>	
 		
 		<div ui-view></div>
-	
-	<!-- Satellizer -->
-	<script src="assets/js/satellizer.min.js"></script>
+
 	<!-- Angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.17/angular-ui-router.min.js"></script>
+	<!-- Satellizer -->
+	<script src="assets/js/satellizer.min.js"></script>
 	<!-- Controller -->
+	<script src="app/controllers/mainCtrl.js"></script>
+	<script src="app/controllers/loginCtrl.js"></script>
+	<script src="app/controllers/signupCtrl.js"></script>
+	<script src="app/controllers/portfolioCtrl.js"></script>
 	<!-- Services -->
 	<script src="app/services/stockService.js"></script>
 	<!-- Main Angular Files -->
