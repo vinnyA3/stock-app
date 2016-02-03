@@ -5,3 +5,31 @@
 	background-position: center;
 	background-size: cover;
 }
+
+
+
+.home-info-section{
+	padding-top: 90px;
+}
+	.home-info-section-img{
+		width: 85%;
+		height: auto;
+	}
+
+.home-sign-up-section{
+	background: url('http://www.hdwallpapers.in/walls/nasdaq_stock_market_new_york-HD.jpg');
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100%;
+	margin-top: 60px;
+}
+	.home-sign-up-section-button{
+		padding: 20px;
+		border:2px solid white;
+		color: white;
+		font-weight: bold;
+		background: transparent;
+		border-radius: 2px;
+		margin:40px 0 40px 0;
+	}

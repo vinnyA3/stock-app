@@ -1,17 +1,25 @@
 <div ui-view="nav"></div>
 	<div class="container">
-		<div class="col-md-7">
-			<div class="stock-graph text-center"><h1>Stock Graph Here</h1></div>
-		</div>
+		<div class="row">
+			<div class="col-md-7">
+				<h3 class="stock-graph-header">Stock Graph Here</h3>
+				<div class="stock-graph text-center"></div>
+			</div>
 
-		<div class="col-md-4 col-md-offset-1">
-			<div class="user-stock-list">
-				<h3 class="user-stock-list-title">Your Stocks</h3>
-				<div ng-repeat ="stock in portfolio.userData.stocks" class="user-stock-list-item">
-					<span class="user-stock-list-item-delete"><i class="fa fa-close"></i></span>
-					<p class="user-stock-list-item-name">{{stock.name}}</p>
-					<p class="user-stock-list-item-symbol">{{stock.symbol}}</p>
+			<div class="col-md-4 col-md-offset-1">
+				<div class="user-stock-list">
+					<h3 class="user-stock-list-title">Your Stocks</h3>
+					<div ng-repeat ="stock in portfolio.userData.stocks" class="user-stock-list-item">
+						<span class="user-stock-list-item-delete"><i class="fa fa-close"></i></span>
+						<p class="user-stock-list-item-name">{{stock.name}}</p>
+						<p class="user-stock-list-item-symbol">{{stock.symbol}}</p>
+					</div>
 				</div>
 			</div>
+			
+		</div><!--end row -->
+		
+		<div class="row">
+			
 		</div>
-	</div>
+	</div><!-- end container -->
