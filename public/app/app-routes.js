@@ -6,6 +6,7 @@ angular.module('appRoutes',['ui.router'])
 				views: {
 					'': {templateUrl: 'app/views/pages/home.html'},
 					'nav@home': {templateUrl: 'app/views/pages/partials/navbar-home-transparent.html',controller:'navbarController as nav'}
+				
 				},
 				controller: 'mainController as main'
 			})
@@ -13,21 +14,24 @@ angular.module('appRoutes',['ui.router'])
 				url:'/signup',
 				views:{
 					'':{templateUrl:'app/views/pages/signup.html', controller: 'signupController as signup'},
-					'nav@signup':{templateUrl:'app/views/pages/partials/navbar.html', controller:'navbarController as nav'}
+					'nav@signup':{templateUrl:'app/views/pages/partials/navbar.html', controller:'navbarController as nav'},
+					'footer@signup':{templateUrl:'app/views/pages/partials/footer.html'}
 				}
 			})
 			.state('login',{
 				url:'/login',
 				views:{
 					'':{templateUrl:'app/views/pages/login.html', controller: 'loginController as login'},
-					'nav@login':{templateUrl:'app/views/pages/partials/navbar.html', controller:'navbarController as nav'}
+					'nav@login':{templateUrl:'app/views/pages/partials/navbar.html', controller:'navbarController as nav'},
+					'footer@login':{templateUrl:'app/views/pages/partials/footer.html'}
 				}
 			})
 			.state('portfolio',{
 				url:'/portfolio',
 				views:{
 					'':{templateUrl:'app/views/pages/portfolio.html', controller: 'portfolioController as portfolio'},
-					'nav@portfolio':{templateUrl:'app/views/pages/partials/navbar.html', controller:'navbarController as nav'}
+					'nav@portfolio':{templateUrl:'app/views/pages/partials/navbar.html', controller:'navbarController as nav'},
+					'footer@portfolio':{templateUrl:'app/views/pages/partials/footer.html'}
 				},
 				resolve: {
 					loginRequired: loginRequired
@@ -37,7 +41,8 @@ angular.module('appRoutes',['ui.router'])
 				url: '/hotstocks',
 				views:{
 					'':{templateUrl:'app/views/pages/hotStocks.html'},
-					'nav@hotstocks':{templateUrl:'app/views/pages/partials/navbar.html', controller:'navbarController as nav'}
+					'nav@hotstocks':{templateUrl:'app/views/pages/partials/navbar.html', controller:'navbarController as nav'},
+					'footer@hotstocks':{templateUrl:'app/views/pages/partials/footer.html'}
 				},
 				resolve: {
 					loginRequired: loginRequired

@@ -1,4 +1,18 @@
 <div ui-view="nav"></div>
 	<div class="container">
-		<h1>This is the signup page</h1>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="user-form-container">
+					<h2>Sign Up</h2><br>
+					<div ng-if="signup.error" class="user-form-container-alert">{{signup.errorMessage}}</div>
+					<form ng-submit="signup.signup()">
+						<input class="form-control" type="text" ng-model="signup.user.name" placeholder="Name"><br>
+						<input class="form-control" type="text" ng-model="signup.user.email" placeholder="Email"><br>
+						<input class="form-control" type="password" ng-model="signup.user.password" placeholder="Password"><br>
+						<input type="submit" class="btn btn-success" value="Sign Up">
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
+<div ui-view="footer"></div>

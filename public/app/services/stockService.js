@@ -9,7 +9,7 @@ angular.module('stockService', [])
 		function getUserStocks(){
 			var deffered = $q.defer();
 			//make http request
-			$http.get('/auth/portfolio',{cache:true})
+			$http.get('/auth/portfolio')
 				.success(function(data){
 					if(data){
 						deffered.resolve(data);
