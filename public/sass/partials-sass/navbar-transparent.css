@@ -1,0 +1,18 @@
+.navbar-fixed-transparent {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold; }
+
+.navbar-fixed-transparent-navbar-item.mod-button {
+  outline: 2px solid white; }
+
+.navbar-fixed-transparent-navbar-item-link {
+  /* override default bootstrap hover */ }
+  .navbar-fixed-transparent-navbar-item-link:hover {
+    background: transparent !important; }
+
+/*# sourceMappingURL=navbar-transparent.css.map */

@@ -1,0 +1,75 @@
+/*
+Error: Undefined mixin 'vendor-box-sizing'.
+        on line 28 of ./portfolio.scss, in `vendor-box-sizing'
+        from line 28 of ./portfolio.scss
+
+23: 		background-color: #ededed;
+24: 		position: relative;
+25: 		margin-bottom: 10px;
+26: 		width: 100%;
+27: 		padding:5px 2px 5px 5px;
+28: 		@include vendor-box-sizing(border-box);
+29: 		&:hover{
+30: 			box-shadow: 0 -3px 0 green inset;
+31: 		}
+32: 	}
+33: 		.user-stock-list-item-delete{
+
+Backtrace:
+./portfolio.scss:28:in `vendor-box-sizing'
+./portfolio.scss:28
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:349:in `block in visit_mixin'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/stack.rb:98:in `block in with_mixin'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/stack.rb:115:in `with_frame'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/stack.rb:98:in `with_mixin'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/stack.rb:79:in `block in with_base'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/stack.rb:115:in `with_frame'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/stack.rb:79:in `with_base'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:431:in `map'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/stack.rb:79:in `block in with_base'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/stack.rb:115:in `with_frame'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/stack.rb:79:in `with_base'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:209:in `each'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:293:in `watch'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/plugin.rb:108:in `method_missing'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/exec/sass_scss.rb:381:in `watch_or_update'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/exec/base.rb:52:in `parse'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/lib/sass/exec/base.rb:19:in `parse!'
+/home/vinny/.rvm/gems/ruby-2.2.4/gems/sass-3.4.20/bin/sass:13:in `<top (required)>'
+/home/vinny/.rvm/gems/ruby-2.2.4/bin/sass:23:in `load'
+/home/vinny/.rvm/gems/ruby-2.2.4/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'vendor-box-sizing'.\A         on line 28 of ./portfolio.scss, in `vendor-box-sizing'\A         from line 28 of ./portfolio.scss\A \A 23: 		background-color: #ededed;\A 24: 		position: relative;\A 25: 		margin-bottom: 10px;\A 26: 		width: 100%;\A 27: 		padding:5px 2px 5px 5px;\A 28: 		@include vendor-box-sizing(border-box);\A 29: 		&:hover{\A 30: 			box-shadow: 0 -3px 0 green inset;\A 31: 		}\A 32: 	}\A 33: 		.user-stock-list-item-delete{"; }
