@@ -1,11 +1,11 @@
 /* ==================  IMPORTS  ==================== */
 /* VARIABLES */
-@import 'variables';
+@import 'variables.scss';
 /* MIXINS */
-@import 'mixins';
+@import 'mixins.scss';
 
-@import 'home';
-@import 'portfolio';
+@import 'home.scss';
+@import 'portfolio.scss';
 /* PARTIAL STYLES */
 @import 'partials-sass/navbar-transparent.scss';
 @import 'partials-sass/footer.scss';
