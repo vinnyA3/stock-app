@@ -16,7 +16,7 @@ angular.module('portfolioCtrl',['stockService'])
 				})
 		};
 	
-		//add these vars to vm to dynamically update the chart ...
+		/*add these vars to vm to dynamically update the chart ...
 			var seriesOptions = [],
 			seriesCounter = 0,
 			names = ['IBM','MSFT', 'AAPL', 'GOOG'];	
@@ -77,7 +77,7 @@ angular.module('portfolioCtrl',['stockService'])
             }
         });
     });
-	
+	*/
 		//call our get stock function
 		vm.getStocks();
 		
